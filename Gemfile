@@ -46,4 +46,4 @@ group :development do
   # gem "spring"
 end
 
-gem 'dotenv-rails'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
