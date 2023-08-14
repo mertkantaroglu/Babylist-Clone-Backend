@@ -8,6 +8,7 @@ class CreateGifts < ActiveRecord::Migration[7.0]
       t.string :image_url, null: false
       t.string :description, null: false
       t.string :specs, null:false
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
