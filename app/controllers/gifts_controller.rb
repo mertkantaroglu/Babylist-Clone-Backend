@@ -13,6 +13,11 @@ class Api::V1::GiftsController < ApplicationController
     end
   end
 
+  def show
+    @gift = Gift.find(params[:id])
+    render json: @gift
+  end
+
   private
 
   def gift_params
