@@ -18,9 +18,18 @@ class Api::V1::GiftsController < ApplicationController
     render json: @gift
   end
 
+  def destroy
+    @gift&.destroy
+    render json: { message: 'Gift deleted!' }
+  end
+
   private
 
   def gift_params
     params.permit(:name, :price, :color, :count, :image_url, :description, :specs)
+  end
+
+  def set_gift
+    @gift = Gift.find(params[:id])
   end
 end
